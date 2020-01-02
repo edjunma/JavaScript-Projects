@@ -8,8 +8,8 @@ const MOVE_AMOUNT = 50;
 // Make a variable called height and width from the same properties as the canvas
 const { width, height } = canvas;
 
-const x = Math.floor(Math.random() * width);
-const x = Math.floor(Math.random() * height);
+let x = Math.floor(Math.random() * width);
+let x = Math.floor(Math.random() * height);
 // Create random x and y starting points on the canvas
 
 ctx.lineJoin = 'round';
@@ -22,10 +22,24 @@ ctx.lineTo(x, y);
 ctx.stroke();
 
 // Write a draw function
+function draw({ key }) {
+	console.log(key);
+	// This starts the path
+	ctx.beginPath();
+	ctx.moveTo(x, y);
+	// Moves our x and y values depending on what the user did
+	x -= 10; // x = x - 10
+	y -= 10; // y = y - 10
+	ctx.lineTo(x, y);
+	ctx.stroke();
+}
 
 // Write a handler for the keys
-function handleKey() {
-	console.log('HANDLING KEY');
+function handleKey(e) {
+	if (e.key.includes('Arrow')) {
+		e.preventDefault();
+		draw({ key: e.key });
+	}
 }
 
 // Listen for the arrow keys
