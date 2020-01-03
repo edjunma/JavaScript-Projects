@@ -2,14 +2,14 @@
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakebutton = document.querySelector('.shake');
-const MOVE_AMOUNT = 10;
+const MOVE_AMOUNT = 25;
 
 // Setup our canvas for drawing
 // Make a variable called height and width from the same properties as the canvas
 const { width, height } = canvas;
 
 let x = Math.floor(Math.random() * width);
-let x = Math.floor(Math.random() * height);
+let y = Math.floor(Math.random() * height);
 // Create random x and y starting points on the canvas
 
 ctx.lineJoin = 'round';
@@ -27,7 +27,7 @@ ctx.stroke();
 // Write a draw function
 function draw({ key }) {
 	// increment the hue
-	hue += 1;
+	hue += 2;
 	ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 	console.log(key);
 
@@ -67,6 +67,7 @@ function handleKey(e) {
 // Clear/Shake function
 function clearCanvas() {
 	canvas.classList.add('shake');
+	ctx.clearRect(0, 0, width, height);
 	canvas.addEventListener(
 		'animationend',
 		function() {
