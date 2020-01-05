@@ -1,10 +1,9 @@
 function addListItem(event) {
-	console.log(event.keyCode);
-	if (event.keyCode == 13) {
+	if (event.key === 'Enter') {
 		const value = document.getElementById('input-todo').value;
 		const listContain = document.getElementById('todo-list');
 		const listItem = document.createElement('li');
-		listItem.value = value;
+		listItem.innerText = value;
 		listContain.appendChild(listItem);
 	}
 }
