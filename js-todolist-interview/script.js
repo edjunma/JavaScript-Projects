@@ -1,10 +1,13 @@
+const inputTodo = document.getElementById('input-todo');
+const todoList = document.getElementById('todo-list');
+
 function addListItem(event) {
 	if (event.key === 'Enter') {
-		const value = document.getElementById('input-todo').value;
-		const listContain = document.getElementById('todo-list');
+		event.preventDefault();
+		const todoText = inputTodo.value;
 		const listItem = document.createElement('li');
-		listItem.innerText = value;
-		listContain.appendChild(listItem);
+		listItem.innerText = todoText;
+		todoList.appendChild(listItem);
 	}
 }
 
