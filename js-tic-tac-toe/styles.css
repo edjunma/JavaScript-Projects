@@ -17,10 +17,10 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: grid;
-	align-items: center;
 	justify-content: center;
-	justify-items: center;
 	align-content: center;
+	justify-items: center;
+	align-items: center;
 	grid-template-columns: repeat(3, auto);
 }
 
@@ -66,7 +66,6 @@ body {
 	background-color: black;
 }
 
-/* Hover Animation */
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
@@ -115,7 +114,6 @@ body {
 	background-color: white;
 }
 
-/* Restart Button */
 .winning-message {
 	display: none;
 	position: fixed;
@@ -123,7 +121,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba (0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.9);
 	justify-content: center;
 	align-items: center;
 	color: white;
@@ -145,6 +143,6 @@ body {
 	border-color: white;
 }
 
-.winning-message .show {
+.winning-message.show {
 	display: flex;
 }
