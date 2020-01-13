@@ -13,6 +13,15 @@ body {
 	margin: 0;
 }
 
+#title {
+	color: #333;
+	text-decoration: underline;
+	position: fixed;
+	top: 200px;
+	left: 41.5%;
+	justify-content: center;
+}
+
 .board {
 	width: 100vw;
 	height: 100vh;
