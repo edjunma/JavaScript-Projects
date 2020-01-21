@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    margin: 5px;
+    padding: 20px;
+    border: 1px solid white;
+}
