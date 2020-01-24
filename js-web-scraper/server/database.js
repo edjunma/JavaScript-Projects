@@ -48,6 +48,36 @@ async function getConnection() {
     })
 }
 
+async function getAllCreators() {
+    const connection = await getConnection();
+    const creatorRepo = connection.getRepository(Creator);
+    const creators = await creatorRepo.find();
+    connection.close();
+    return creators;
+}
+
+
+async function insertCreator(name, img, ytURL) {
+    const connection = await getConnection();
+    
+    // create
+    const creator = new Creator();
+    creator.name = name;
+    creator.img = img;
+    creator.ytURL = ytURL;
+
+    // save
+    const creatorRepo = connection.getRepository(Creator);
+    const res = await creatorRepo.save(creator);
+    console.log('saved', res);
+
+    // return new list
+    const allCreators = await creatorRepo.find();
+    connection.close();
+    return allCreators;
+
+}
+
 module.exports = {
     getAllCreators,
     insertCreator
