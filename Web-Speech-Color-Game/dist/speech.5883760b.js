@@ -344,7 +344,7 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 function start() {
   // see if their browser supports this
   if (!('SpeechRecognition' in window)) {
-    console.log('Sorry your browser does not support speech reco. ');
+    console.log('Sorry your browser does not support speech recognition. ');
     return;
   } // it does work
 
@@ -388,7 +388,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28621" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28738" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
