@@ -10,16 +10,17 @@ const app = () => {
 
 	// Time Display
 	const timeDisplay = document.querySelector('.time-display');
-	const timeSelect = document.querySelectorAll('.time-select button');
 
 	// Get the length of the outline
 	const outlineLength = outline.getTotalLength();
 
 	// Duration
+	const timeSelect = document.querySelectorAll('.time-select button');
 	let fakeDuration = 600;
 
 	outline.style.strokeDasharray = outlineLength;
 	outline.style.strokeDashoffset = outlineLength;
+	timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
 
 	// Pick different sounds
 	sounds.forEach(sound => {
@@ -39,6 +40,13 @@ const app = () => {
 	replay.addEventListener('click', function() {
 		restartSong(song);
 	});
+
+	// Restart Sound function
+	const restartSong = song => {
+		let currentTime = song.currentTime;
+		song.currentTime = 0;
+		console.log('ciao');
+	};
 
 	// Select Sound
 	timeSelect.forEach(option => {
@@ -68,11 +76,12 @@ const app = () => {
 		let seconds = Math.floor(elapsed % 60);
 		let minutes = Math.floor(elapsed / 60);
 
+		// Animate the text
+		timeDisplay.textContent = `${minutes}:${seconds}`;
+
 		// Animate the circle
 		let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
 		outline.style.strokeDashoffset = progress;
-		// Animate the text
-		timeDisplay.textContent = `${minutes}:${seconds}`;
 
 		if (currentTime >= fakeDuration) {
 			song.pause();

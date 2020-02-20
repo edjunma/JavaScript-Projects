@@ -76,9 +76,15 @@
 	transform: translate(-50%, -50%) rotate(-90deg);
 	pointer-events: none;
 }
+
 .player-container svg circle {
 	transition: all 0.2s ease-in-out;
 }
+
+.play {
+	position: absolute;
+}
+
 .time-display {
 	color: white;
 	position: absolute;
