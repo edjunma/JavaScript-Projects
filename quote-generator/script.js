@@ -20,6 +20,9 @@ function complete() {
 }
 
 console.log('test');
+console.log('test');
+console.log('test');
+console.log('test');
 
 // Get Quote From API
 async function getQuote() {
