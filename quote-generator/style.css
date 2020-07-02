@@ -17,6 +17,7 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+<<<<<<< HEAD
 
 .quote-container {
 	width: auto;
@@ -111,3 +112,5 @@ button:active {
 		font-size: 2.5rem;
 	}
 }
+=======
+>>>>>>> 598c3d446af1004ff42e9afa71a996892b22c2cd
